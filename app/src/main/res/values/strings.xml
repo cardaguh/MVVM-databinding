@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PracticeMVVMDataBinding</string>
+    <string name="str_nav_profile">Account</string>
+    <string name="str_nav_home">Home</string>
+    <string name="str_nav_lists">Lists</string>
+    <string name="str_nav_cart">Cart</string>
+</resources>

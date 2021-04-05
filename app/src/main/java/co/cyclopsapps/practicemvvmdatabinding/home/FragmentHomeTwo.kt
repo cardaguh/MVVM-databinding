@@ -8,12 +8,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import co.cyclopsapps.practicemvvmdatabinding.R
 import co.cyclopsapps.practicemvvmdatabinding.databinding.FragmentHomeTwoBinding
-import co.cyclopsapps.practicemvvmdatabinding.home.FragmentHomeTwoArgs.*
+import co.cyclopsapps.practicemvvmdatabinding.home.FragmentHomeTwoArgs.fromBundle
 
 /**
  * Created by Carlos Daniel Agudelo on 14/03/2021.
  */
-class FragmentHomeTwo: Fragment() {
+class FragmentHomeTwo : Fragment() {
 
     lateinit var binding: FragmentHomeTwoBinding
 

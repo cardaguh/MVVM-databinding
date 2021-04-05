@@ -11,12 +11,12 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import co.cyclopsapps.practicemvvmdatabinding.R
 import co.cyclopsapps.practicemvvmdatabinding.databinding.FragmentHomeOneBinding
-import co.cyclopsapps.practicemvvmdatabinding.home.FragmentHomeOneDirections.*
+import co.cyclopsapps.practicemvvmdatabinding.home.FragmentHomeOneDirections.actionFragmentHomeOneToFragmentHomeTwo
 
 /**
  * Created by Carlos Daniel Agudelo on 14/03/2021.
  */
-class FragmentHomeOne: Fragment() {
+class FragmentHomeOne : Fragment() {
 
     lateinit var viewModel: HomeOneViewModel
     lateinit var binding: FragmentHomeOneBinding
@@ -33,7 +33,7 @@ class FragmentHomeOne: Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home_one, container, false)
         binding.viewModel = viewModel
-        return  binding.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -11,7 +11,7 @@ import co.cyclopsapps.practicemvvmdatabinding.databinding.FragmentListBinding
 /**
  * Created by Carlos Daniel Agudelo on 14/03/2021.
  */
-class FragmentList: Fragment() {
+class FragmentList : Fragment() {
 
     lateinit var binding: FragmentListBinding
 

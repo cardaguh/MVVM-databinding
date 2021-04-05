@@ -11,7 +11,7 @@ import co.cyclopsapps.practicemvvmdatabinding.databinding.FragmentCartBinding
 /**
  * Created by Carlos Daniel Agudelo on 14/03/2021.
  */
-class FragmentCart: Fragment() {
+class FragmentCart : Fragment() {
 
     private lateinit var binding: FragmentCartBinding
 
@@ -20,7 +20,7 @@ class FragmentCart: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= DataBindingUtil.inflate(inflater,R.layout.fragment_cart, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cart, container, false)
         return binding.root
     }
 }

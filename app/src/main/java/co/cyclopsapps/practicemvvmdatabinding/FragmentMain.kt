@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import co.cyclopsapps.practicemvvmdatabinding.databinding.FragmentMainBinding
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import co.cyclopsapps.practicemvvmdatabinding.databinding.FragmentMainBinding
 
 /**
  * Created by Carlos Daniel Agudelo on 14/03/2021.

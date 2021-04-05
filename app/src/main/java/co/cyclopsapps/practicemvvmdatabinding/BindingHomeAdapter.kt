@@ -1,6 +1,5 @@
 package co.cyclopsapps.practicemvvmdatabinding
 
-import android.media.Image
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
@@ -18,7 +17,7 @@ import com.bumptech.glide.Glide
 @BindingAdapter(value = ["functions", "position"], requireAll = false)
 fun loadFunctionsImage(view: ImageView, functions: ArrayList<FirstFunctionItem>?, position: Int) {
     functions?.let {
-        if(functions.size > position) {
+        if (functions.size > position) {
             Log.d("Binding Adapter", functions[position].image)
             Log.d("Binding Adapter", "position: $position")
             Log.d("Binding Adapter", "position: ${functions[position]}")
@@ -31,10 +30,10 @@ fun loadFunctionsImage(view: ImageView, functions: ArrayList<FirstFunctionItem>?
 }
 
 @BindingAdapter(value = ["showFirstFunction", "position"], requireAll = false)
-fun showFirstFunction(view : View, showFirstFunction: ArrayList<FirstFunctionItem>?, position: Int) {
+fun showFirstFunction(view: View, showFirstFunction: ArrayList<FirstFunctionItem>?, position: Int) {
     showFirstFunction?.let {
-        if(showFirstFunction.size > position) {
-            if(showFirstFunction[position].visible) {
+        if (showFirstFunction.size > position) {
+            if (showFirstFunction[position].visible) {
                 view.visibility = View.VISIBLE
             } else {
                 view.visibility = View.GONE
@@ -46,16 +45,16 @@ fun showFirstFunction(view : View, showFirstFunction: ArrayList<FirstFunctionIte
 }
 
 @BindingAdapter(value = ["functions", "position"], requireAll = false)
-fun loadFunctionText(view : TextView, functions: ArrayList<FirstFunctionItem>?, position: Int) {
+fun loadFunctionText(view: TextView, functions: ArrayList<FirstFunctionItem>?, position: Int) {
     functions?.let {
-        if(functions.size > position) {
+        if (functions.size > position) {
             view.text = functions[position].title
         }
     }
 }
 
 @BindingAdapter("setAdapter")
-fun setAdapter(view : RecyclerView, itemsAdapter: ItemsAdapter) {
+fun setAdapter(view: RecyclerView, itemsAdapter: ItemsAdapter) {
     view.adapter = itemsAdapter
 }
 

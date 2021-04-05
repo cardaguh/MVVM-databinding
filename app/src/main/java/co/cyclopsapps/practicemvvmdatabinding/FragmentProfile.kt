@@ -11,7 +11,7 @@ import co.cyclopsapps.practicemvvmdatabinding.databinding.FragmentProfileBinding
 /**
  * Created by Carlos Daniel Agudelo on 14/03/2021.
  */
-class FragmentProfile: Fragment() {
+class FragmentProfile : Fragment() {
     lateinit var binding: FragmentProfileBinding
 
     override fun onCreateView(

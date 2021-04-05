@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import co.cyclopsapps.practicemvvmdatabinding.model.FirstFunctionItem
 
-class HomeOneViewModel(app: Application): AndroidViewModel(app) {
+class HomeOneViewModel(app: Application) : AndroidViewModel(app) {
     public val firstFunctionsList = MutableLiveData<ArrayList<FirstFunctionItem>>()
     var navigationRoute = ""
 

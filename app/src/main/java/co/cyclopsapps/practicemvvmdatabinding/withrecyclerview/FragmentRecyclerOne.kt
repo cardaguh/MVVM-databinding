@@ -14,7 +14,7 @@ import co.cyclopsapps.practicemvvmdatabinding.databinding.FragmentRecyclerviewBi
 /**
  * Created by Carlos Daniel Agudelo on 14/03/2021.
  */
-class FragmentRecyclerOne: Fragment() {
+class FragmentRecyclerOne : Fragment() {
 
     lateinit var viewModel: RecyclerOneViewModel
     lateinit var binding: FragmentRecyclerviewBinding

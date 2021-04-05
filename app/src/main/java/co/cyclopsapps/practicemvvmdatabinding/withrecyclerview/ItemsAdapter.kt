@@ -8,7 +8,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import co.cyclopsapps.practicemvvmdatabinding.R
 import co.cyclopsapps.practicemvvmdatabinding.databinding.ItemRecyclerviewBinding
-import kotlinx.coroutines.flow.combine
 
 class ItemsAdapter(var itemList: ArrayList<String>) : RecyclerView.Adapter<ItemViewHolder>() {
     val resource = R.layout.item_recyclerview

@@ -14,16 +14,17 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/textView"
+            android:id="@+id/recyclerview"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:setAdapter="@{viewModel.itemsAdapter}"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/item_recyclerview" />
+            tools:listitem="@layout/character_row" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
+<!-- app:setAdapter="@{viewModel.itemsAdapter}"-->

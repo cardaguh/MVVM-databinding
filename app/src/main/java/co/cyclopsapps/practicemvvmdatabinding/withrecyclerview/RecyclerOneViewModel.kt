@@ -1,29 +1,36 @@
 package co.cyclopsapps.practicemvvmdatabinding.withrecyclerview
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
+import androidx.lifecycle.*
+import co.cyclopsapps.practicemvvmdatabinding.model.CharacterDataModel
+import co.cyclopsapps.practicemvvmdatabinding.repository.CharacterRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 
-class RecyclerOneViewModel(app: Application) : AndroidViewModel(app) {
+class RecyclerOneViewModel(app: Application) : AndroidViewModel(app), CoroutineScope {
 
-    var itemsAdapter = MutableLiveData<ItemsAdapter>()
-    val itemList = ArrayList<String>()
+    private val _itemSelected = MutableLiveData<CharacterDataModel>()
+    val itemSelected: LiveData<CharacterDataModel> = _itemSelected
 
-    private val _itemSelected = MutableLiveData<String>()
-    val itemSelected: LiveData<String> = _itemSelected
+    private val _listState = MutableLiveData<MutableList<CharacterDataModel>>()
+    val listState: LiveData<MutableList<CharacterDataModel>> = _listState
 
-    lateinit var observerOnCategorySelected: Observer<String>
+    private val repository = CharacterRepository()
+    lateinit var observerOnCategorySelected: Observer<CharacterDataModel>
+
+
+    private val viewModelJob = Job()
+    override val coroutineContext: CoroutineContext
+        get() = viewModelJob + Dispatchers.Default
 
     init {
-        for (i in 1..50) {
-            itemList.add("Item $i")
-        }
         initObserver()
     }
 
-    fun initObserver() {
+    private fun initObserver() {
         observerOnCategorySelected = Observer { value ->
             value.let {
                 _itemSelected.value = it
@@ -31,15 +38,22 @@ class RecyclerOneViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
-    fun loadItemsRecyclerView() {
-        val adapter = ItemsAdapter(itemList)
-        itemsAdapter.value = adapter
-        adapter.onItemSelected.observeForever(observerOnCategorySelected)
-        adapter.notifyDataSetChanged()
-    }
 
     fun clearSelection() {
         _itemSelected.value = null
     }
 
+    fun fetchMorthyData(){
+        viewModelScope.launch {
+            val response = repository.getCharacter2()
+            response?.body()?.results?.let{ list ->
+                _listState.value = list
+            }
+        }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
+    }
 }

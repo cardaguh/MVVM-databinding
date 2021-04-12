@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import co.cyclopsapps.practicemvvmdatabinding.R
 import co.cyclopsapps.practicemvvmdatabinding.databinding.FragmentRecyclerviewBinding
 
@@ -43,6 +44,8 @@ class FragmentRecyclerOne : Fragment() {
             it?.let {
                 Toast.makeText(context, "$it Selected", Toast.LENGTH_SHORT).show()
                 viewModel.clearSelection()
+                //findNavController(R.id.nav_host_fragment).navigate(R.id.fragmentProfile)
+                findNavController().navigate(R.id.fragmentDetail)
             }
         }
     }

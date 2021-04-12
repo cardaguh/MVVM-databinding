@@ -9,5 +9,13 @@
         android:id="@+id/fragmentRecyclerOne"
         android:name="co.cyclopsapps.practicemvvmdatabinding.withrecyclerview.FragmentRecyclerOne"
         android:label="FragmentRecyclerOne"
-        tools:layout="@layout/fragment_recyclerview" />
+        tools:layout="@layout/fragment_recyclerview" >
+        <action
+            android:id="@+id/action_fragmentRecyclerOne_to_fragmentDetail"
+            app:destination="@id/fragmentDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetail"
+        android:name="co.cyclopsapps.practicemvvmdatabinding.FragmentDetail"
+        android:label="FragmentDetail" />
 </navigation>

@@ -4,4 +4,5 @@
     <string name="str_nav_home">Home</string>
     <string name="str_nav_lists">Lists</string>
     <string name="str_nav_cart">Cart</string>
+    <string name="hello_blank_fragment">Hello Blank Fragment 1</string>
 </resources>
